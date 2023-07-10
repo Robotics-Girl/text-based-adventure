@@ -1,0 +1,41 @@
+# date: 2023-07-04
+#description: a text-based world ending game 
+
+import random 
+import time 
+
+def displayIntro(): 
+	print("After 10 long years of war, famine, climate change, global warming, and capitalism, the world is finally ending. It is July 4, 2023. The US's independence day. Usually, fireworks and festivities would be happening, but since the government has crumbled, no body is celebrating. Rather, they are preparing and trying to remain safe during their last days.")
+	print("MEANWHILE")
+	print("Only 500 people can make it onto a ship that will leave Earth and travel to another planet like Earth. You are an aerospace engineer who has a PhD in engineering. You work at NASA. You have been a valuable asset to the organization. Your work has been publicized for a very long time! You have several accomplished awards and projects. You have a bigger project in store for space exploration.")
+	print("Now, you must prove yourself to the organization that is taking the 500 people, GLOBAL, that you are not only a accomplished aerospace engineer and have more qualities that make you a perfect individual to travel.")
+	print("You arrive at the GLOBAL headquarters for your interview.")
+	print("You can go two ways. You can choose to go with the interview and its grueling process of physical, mental, and intelligence testing.")
+	print("OR")
+	print("You can go home and decide to live the rest of your remaining and short days with your family, friends, and your dog that is suffering from dementia.")
+def choosePath(): 
+	path = ""
+	while path != "1" and path != "2":
+		path = input("Which path will you choose? (1 or 2):")
+
+	return path 
+def checkPath(chosenPath): 
+	print("You make your choice.")
+	time.sleep(2)
+	print("What happens next???? ")
+	print()
+	time.sleep(3)
+	correctPath = random.randint(1,2)
+	if chosenPath == correctPath: 
+		print('The lady asks you to follow her, and you do. You walk into a narrow hallway, which is void of anything but doors. Soon, you reach a door that says, "Mr. Anderson." She tells you to go inside. You take a deep breath and go inside.')
+		print("Welcome! I'm so glad you applied for one of the 500 positions, Mr. Anderson says.")
+	else: 
+		print("Feeling defeated but glad that you didn't kill yourself, you leave the building and head towards your home.")
+displayIntro()
+choosePath()
+playAgain = "yes"
+while playAgain == "yes" or playAgain == "y":
+	displayIntro()
+	choice = choosePath()
+	checkPath(choice)
+	playAgain = input("Do you want to play again? (yes or y to continue playing):")
